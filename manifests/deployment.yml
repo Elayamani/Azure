@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: elayamaniazure 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elayamaniazure
+  template:
+    metadata:
+      labels:
+        app: elayamaniazure 
+    spec:
+      containers:
+        - name: elayamaniazure 
+          image: mycontainerregistryela1.azurecr.io/elayamaniazure
+          ports:
+          - containerPort: 8080
